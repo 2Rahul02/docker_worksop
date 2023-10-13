@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #upload-form {
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        #confirmation-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #upload-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="upload-form">
+        <h2>Upload an Image</h2>
+        
+        <div id="confirmation-message">File uploaded successfully.</div>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="file-input">
+            <br><br>
+            <input type="submit" value="Upload" id="upload-button">
+        </form>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var confirmationMessage = document.getElementById('confirmation-message');
+            if (confirmationMessage) {
+                confirmationMessage.style.display = 'block';
+                setTimeout(function() {
+                    confirmationMessage.style.display = 'none';
+                }, 2000); // Show for 2 seconds
+            }
+        };
+    </script>
+</body>
+</html>
