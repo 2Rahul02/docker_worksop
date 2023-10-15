@@ -13,8 +13,5 @@ RUN pip install -r requirements.txt
 # Define environment variable
 ENV NAME World
 
-# Create a volume for uploaded images
-VOLUME /uploads
-
 # Run app.py when the container launches
 CMD ["python", "app.py"]
